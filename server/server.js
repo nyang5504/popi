@@ -1,11 +1,21 @@
 const express = require("express");
 const fetch = require("node-fetch").default;
+const {MongoClient} = require('mongodb');
 
 const app = express();
 
 app.use(express.json())
-
-
+const uri = "mongodb+srv://anlingchen:popiapp123@popi.oaupn93.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
+async function main() {
+    try {
+        await client.connect();
+    
+        await listDatabases(client);
+     
+    } catch (e) {
+        console.error(e);
+    }}
 // const api_key = "c2b279f1bbfca29d3c01815222dafcf9";
 
 // let getAlbumdata = () =>{
