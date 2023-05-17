@@ -10,6 +10,8 @@ const Homepage = () => {
     console.log(info);
 
     return (
+      <div id="headerLine">
+      <h3>Top Albums Today!</h3>
         <div className="album-grid">
           {Array.isArray(info) && info.map((item, index) => (
             <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
@@ -17,6 +19,7 @@ const Homepage = () => {
             </Link>                           
           ))}
         </div>
+      </div>
     )
 };
 

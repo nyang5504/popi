@@ -4,3 +4,9 @@
   gap: 20px;
   padding: 20px;
 }
+
+#headerline {
+  display: flex;
+  text-align: center;
+  text-decoration: double;
+}

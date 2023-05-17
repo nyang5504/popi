@@ -3,7 +3,7 @@ import './AlbumCard.css'
 
 const AlbumCard = (props) => {
     const { album } = props;
-
+    document.cookie = "name=John Doe";
     return (
       <Link to={"/albumdashboard/" + encodeURIComponent(album[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
             <div className="album-card">
