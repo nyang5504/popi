@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { AlbumContext } from '../components/AlbumContext';
 import AlbumCard from '../components/AlbumCard';
 import ReviewCard from '../components/ReviewCard';
+import {useLocalStorage} from 'usehooks-ts'
 import './AlbumDashboard.css';
 
 const AlbumDashboard = () => {
@@ -13,8 +14,14 @@ const AlbumDashboard = () => {
   const album = allinfo.find(album => album[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase() === decodeURIComponent(albumName));
 
   // Start with an empty array for reviews
-  const [reviews, setReviews] = useState([]);
+  // const [reviews, setReviews] = useState(json.parse(localStorage.getItem("reviews")) ||[]);
   const [newReview, setNewReview] = useState('');
+
+  const [reviews, setReviews] = useLocalStorage('review', []) 
+  useEffect(()=>{
+    localStorage.setItem("reviews", reviews.toString());
+  }, [reviews])
+
 
   // Function to handle adding a new review
   const addReview = () => {
@@ -38,7 +45,11 @@ const AlbumDashboard = () => {
   }
 
   return (
+    <div>
+      <div id="top"><Link to="/home">Homepage</Link></div>
+    
     <div className="album-dashboard">
+      
       <div className="left-side">
         <AlbumCard album={album} />
       </div>
@@ -53,6 +64,7 @@ const AlbumDashboard = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
