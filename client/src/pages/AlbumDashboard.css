@@ -9,12 +9,13 @@
 
 .left-side {
   flex: 0.5; 
-  margin-right: 70px;
+  margin-right: 100px;
 }
 
 .right-side {
   flex: 1.5; 
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .reviews-container {
