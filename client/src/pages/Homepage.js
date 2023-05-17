@@ -1,10 +1,11 @@
 import AlbumCard from "../components/AlbumCard"
+import styles from './Homepage.css'
 
 const Homepage = (props) => {
     return(
         <div>
-            <AlbumCard/>
-            <h1>HOMEPAGE</h1>
+            <AlbumCard info={props.info}/>
+            {/* {props.render()} */}
         </div>
     )
 };
