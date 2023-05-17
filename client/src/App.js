@@ -53,13 +53,10 @@ function App() {
     <div>
       
       <BrowserRouter>
-        
-        <Link to="/albumdashboard">album dashboard</Link>
-        
         <Routes>
           <Route index element={<Homepage info={allinfo}/>}/>
           <Route path='/home' element={<Homepage info={allinfo}/>}/>
-          <Route path='/albumdashboard' element={<AlbumDashboard/>}/>
+          <Route path='/albumdashboard/:albumName' element={<AlbumDashboard/>}/>
         </Routes>
         {/* <div id="homepage">{renderAll()}</div> */}
       </BrowserRouter>

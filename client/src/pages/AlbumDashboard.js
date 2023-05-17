@@ -1,10 +1,12 @@
-import AlbumCard from "../components/AlbumCard";
+import { useParams } from 'react-router-dom';
 
 const AlbumDashboard = (props) => {
+    const { albumName } = useParams();
+
     return(
         <div>
-            {/* <AlbumCard/> */}
-            <h1>ALBUMDASHBOARD</h1>
+            <h1>ALBUM DASHBOARD</h1>
+            <h2>Album: {albumName.replace(/-/g, ' ')}</h2>
         </div>
     )
 };
