@@ -5,6 +5,7 @@ import AlbumDashboard from './pages/AlbumDashboard';
 import React, { useEffect, useState } from 'react';
 // import { getAlbumInfo } from '../../server/server'; 
 import './App.css';
+import { AlbumContext } from './components/AlbumContext';
 
 // let image = ""
 // let albumName = ""
@@ -48,17 +49,16 @@ function App() {
   // };
 
   return (
-    
-
     <div>
-      
       <BrowserRouter>
-        <Routes>
-          <Route index element={<Homepage info={allinfo}/>}/>
-          <Route path='/home' element={<Homepage info={allinfo}/>}/>
-          <Route path='/albumdashboard/:albumName' element={<AlbumDashboard/>}/>
-        </Routes>
-        {/* <div id="homepage">{renderAll()}</div> */}
+        <Link to="/home">Homepage</Link>
+        <AlbumContext.Provider value={allinfo}>
+          <Routes>
+            <Route index element={<Homepage />}/>
+            <Route path='/home' element={<Homepage />}/>
+            <Route path='/albumdashboard/:albumName' element={<AlbumDashboard/>}/>
+          </Routes>
+        </AlbumContext.Provider>
       </BrowserRouter>
     </div>
   )
