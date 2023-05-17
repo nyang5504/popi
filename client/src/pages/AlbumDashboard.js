@@ -9,7 +9,7 @@ const AlbumDashboard = () => {
   const allinfo = useContext(AlbumContext);
 
   // Find the album that matches the albumName URL parameter
-  const album = allinfo.find(album => album[2].replace(/\s+/g, '-').toLowerCase() === albumName);
+  const album = allinfo.find(album => album[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase() === decodeURIComponent(albumName));
 
   // Static reviews data
   const reviews = [

@@ -12,9 +12,9 @@ const Homepage = () => {
     return (
         <div className="album-grid">
           {Array.isArray(info) && info.map((item, index) => (
-            <Link to={"/albumdashboard/" + item[2].replace(/\s+/g, '-').toLowerCase()}>
-              <AlbumCard key={index} album={item} />
-            </Link>
+            <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
+                <AlbumCard key={index} album={item} />
+            </Link>                           
           ))}
         </div>
     )
