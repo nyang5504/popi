@@ -51,7 +51,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Link to="/albumdashboard">album dashboard</Link>
+        <Link to="/home">Homepage</Link>
         <AlbumContext.Provider value={allinfo}>
           <Routes>
             <Route index element={<Homepage />}/>
