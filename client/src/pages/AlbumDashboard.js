@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { AlbumContext } from '../components/AlbumContext';
 import AlbumCard from '../components/AlbumCard';
 import ReviewCard from '../components/ReviewCard';
+import './AlbumDashboard.css';
 
 const AlbumDashboard = () => {
   const { albumName } = useParams();
