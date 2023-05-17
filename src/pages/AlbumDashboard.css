@@ -1,0 +1,25 @@
+.album-dashboard {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+  
+  .left-side {
+    flex: 1;
+    margin-right: 70px;
+  }
+  
+  .right-side {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .reviews-container {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  
+    
