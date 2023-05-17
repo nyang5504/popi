@@ -11,12 +11,12 @@ const Homepage = () => {
 
     return (
       <div id="headerLine">
-      <h3>Top Albums Today!</h3>
+      <h3 style={{textAlign:'center'}}>Top Albums Today!</h3>
         <div className="album-grid">
           {Array.isArray(info) && info.map((item, index) => (
-            <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
+            // <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
                 <AlbumCard key={index} album={item} />
-            </Link>                           
+            // </Link>                           
           ))}
         </div>
       </div>

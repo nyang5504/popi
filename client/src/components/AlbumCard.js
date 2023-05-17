@@ -3,15 +3,20 @@ import './AlbumCard.css'
 
 const AlbumCard = (props) => {
     const { album } = props;
-    document.cookie = "name=John Doe";
     return (
-      <Link to={"/albumdashboard/" + encodeURIComponent(album[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
+     
             <div className="album-card">
+                <div>
+                 <Link to={"/albumdashboard/" + encodeURIComponent(album[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
+                {/* <div> */}
                 <img src={album[0]} alt={album[1] + " " + album[2]} />
+               
+               </Link>
+               </div>
                 <div className="artist-name">{album[1]}</div>
                 <div className="album-name">{album[2]}</div>
             </div>
-        </Link>
+        // </Link>
     );
 };
 

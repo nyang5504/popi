@@ -3,15 +3,17 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: lightcyan;
+  background-color: lightcyan; 
   outline: 10 lvb;
   outline-style: groove;
 
 }
 
-.album-card img {
+.album-card {
   width: 100%;
   max-width: 300px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .artist-name {

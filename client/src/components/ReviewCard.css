@@ -5,6 +5,7 @@
     flex-direction: column;
     background-color: #f8f8f8;
     max-width: 400px; 
+    
 }
   
 .review-user {
@@ -13,7 +14,7 @@
     margin-bottom: 10px;
 }
 
-.review-user p {
+.review-user {
     /* for the username */
     font-size: 16px;
     font-weight: bold;
