@@ -1,3 +1,4 @@
+import logo from './logo.svg';
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import Homepage from './pages/Homepage';
 import AlbumDashboard from './pages/AlbumDashboard';
@@ -5,6 +6,7 @@ import './App.css';
 
 function App() {
   return (
+
     <div>
       <BrowserRouter>
         <Link to="/albumdashboard">album dashboard</Link>
