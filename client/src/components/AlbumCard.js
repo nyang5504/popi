@@ -1,13 +1,15 @@
 import './AlbumCard.css'
-const AlbumCard = (props) => {
 
-  return ((props.info).map(item => (
-    <div id="albumCardHomepage" style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
-      <img src={item[0]}></img>
-      <div className="artistName">{item[1]}</div>
-      <div className="albumName">{item[2]}</div>
-    </div>
-  )))
+const AlbumCard = (props) => {
+    const { album } = props;
+
+    return (
+        <div className="album-card">
+            <img src={album[0]} alt={album[1] + " " + album[2]} />
+            <div className="artist-name">{album[1]}</div>
+            <div className="album-name">{album[2]}</div>
+        </div>
+    );
 };
 
 export default AlbumCard;

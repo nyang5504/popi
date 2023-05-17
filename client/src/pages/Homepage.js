@@ -1,11 +1,12 @@
 import AlbumCard from "../components/AlbumCard"
-import styles from './Homepage.css'
+import './Homepage.css'
 
 const Homepage = (props) => {
     return(
-        <div>
-            <AlbumCard info={props.info}/>
-            {/* {props.render()} */}
+        <div className="album-grid">
+            {props.info.map((item, index) => (
+                <AlbumCard key={index} album={item} />
+            ))}
         </div>
     )
 };

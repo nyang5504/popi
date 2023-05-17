@@ -1,21 +1,6 @@
-/* #homepage{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  
-  }
-  #albumCardHomepage{
-    width: fit-content;
-    flex-basis: 15%;
-    
-  }
-  .artistName{
-    display: flex;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  
-  }
-  .albumName{
-    display: flex;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
-  } */
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}

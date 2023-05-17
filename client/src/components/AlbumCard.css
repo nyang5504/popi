@@ -1,46 +1,22 @@
-/* #homepage{
+.album-card {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
-#albumCardHomepage{
-  width: fit-content;
-  flex-basis: 15%;
-  
+
+.album-card img {
+  width: 100%;
+  max-width: 200px;
 }
-.artistName{
-  display: flex;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+.artist-name {
+  font-family: Calibri, sans-serif;
+  margin-top: 10px;
 }
-.albumName{
-  display: flex;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-} */
+.album-name {
+  font-family: Arial, sans-serif;
+  margin-top: 5px;
+}
 
-
-/* .album-card {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-  }
-
-  .album-name {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-  }
-
-  .artist-name {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-  } */
