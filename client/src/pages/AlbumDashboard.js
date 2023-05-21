@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { AlbumContext } from '../components/AlbumContext';
 import AlbumCard from '../components/AlbumCard';
 import ReviewCard from '../components/ReviewCard';
-import {useLocalStorage} from 'usehooks-ts'
+import {useLocalStorage} from 'usehooks-ts';
+import popilogo from './popi.png';
 import './AlbumDashboard.css';
 
 const AlbumDashboard = () => {
@@ -29,6 +30,7 @@ const AlbumDashboard = () => {
       avatarUrl: '',
       username: 'anon',
       comment: newReview,
+      albumName: albumName
     };
 
     setReviews([...reviews, review]);
@@ -46,17 +48,21 @@ const AlbumDashboard = () => {
 
   return (
     <div>
-      <div id="top"><Link to="/home">Homepage</Link></div>
+      <div id="top"><Link to="/home">
+        <img style={{height: '100px'}} src={popilogo}></img>
+        </Link></div>
     
     <div className="album-dashboard">
-      
-      <div className="left-side">
+      {/* <div style={{alignItems: 'center'}}> */}
+      <div className="left-side"  style={{alignItems:'center'}}>
         <AlbumCard album={album} />
       </div>
+      {/* </div> */}
       <div className="right-side">
         <div className="reviews-container">
           {reviews.map((review, index) => (
-            <ReviewCard key={index} review={review} />
+            // {review.albumName === albumName &&
+            <ReviewCard key={index} review={review} albumName={albumName}/>
           ))}
           <div className="new-review-form">
             <input type="text" value={newReview} onChange={e => setNewReview(e.target.value)} />

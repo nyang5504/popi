@@ -3,6 +3,7 @@ import AlbumCard from "../components/AlbumCard";
 import './Homepage.css';
 import { Link } from 'react-router-dom';
 import { AlbumContext } from '../components/AlbumContext';
+import popilogo from './popi.png';
 
 const Homepage = () => {
     const info = useContext(AlbumContext);
@@ -11,12 +12,13 @@ const Homepage = () => {
 
     return (
       <div id="headerLine">
-      <h3>Top Albums Today!</h3>
+      <img style={{height: '100px', alignSelf: 'center'}} src={popilogo}></img>
+      {/* <h1 style={{textAlign: 'center'}}>Popi</h1> */}
         <div className="album-grid">
           {Array.isArray(info) && info.map((item, index) => (
-            <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
+            // <Link to={"/albumdashboard/" + encodeURIComponent(item[2].replace(/\s+/g, '-').replace(/\//g, '_').toLowerCase())}>
                 <AlbumCard key={index} album={item} />
-            </Link>                           
+            // </Link>                           
           ))}
         </div>
       </div>

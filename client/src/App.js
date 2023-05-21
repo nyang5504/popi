@@ -18,6 +18,7 @@ function App() {
   const [allinfo, setAllInfo] = useState([]);
 
   useEffect(() => {
+    try {
     fetch('https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&tag=pop&limit=12&api_key=c2b279f1bbfca29d3c01815222dafcf9&format=json')
       .then(response => response.json())
       .then(data => {
@@ -33,6 +34,10 @@ function App() {
       }
       setAllInfo(allInfoData);
     });
+  }
+  catch (e) {
+    console.log("Error with API")
+  }
 }, []);
   
   // const renderAll = () => {

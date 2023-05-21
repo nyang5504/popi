@@ -1,7 +1,8 @@
 import React from 'react';
 import './ReviewCard.css';
 
-const ReviewCard = ({ review }) => {
+const ReviewCard = ({ review, albumName }) => {
+  if (review.albumName === albumName)
   return (
     <div className="review-card">
       <div className="review-user">
